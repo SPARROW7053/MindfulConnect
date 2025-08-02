@@ -1,0 +1,285 @@
+.auth-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--background-light);
+  transition: background-color 0.3s ease;
+  width: 100%; /* Ensure container takes full width */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  padding: 1rem; /* Add padding for mobile */
+}
+
+.dark-mode .auth-container {
+  background-color: var(--background-dark);
+}
+
+.auth-box {
+  background-color: var(--background-muted);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem; /* Reduce padding on mobile */
+  width: 100%;
+  max-width: 400px;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 768px) {
+  .auth-box {
+    padding: 2rem;
+  }
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-header h1 {
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.auth-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 0.75rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-muted);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-tab.active {
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
+}
+
+.auth-form-container {
+  margin-bottom: 1.5rem;
+}
+
+.auth-form {
+  display: none;
+}
+
+.auth-form.active {
+  display: block;
+}
+
+/* Update form input colors for better visibility */
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-size: 1rem;
+  max-width: 100%; /* Ensure inputs don't overflow */
+}
+
+.dark-mode .form-group input {
+  background-color: var(--background-muted);
+  border-color: var(--border-dark);
+  color: var(--text-light);
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.auth-submit:hover {
+  background-color: var(--primary-dark);
+}
+
+.forgot-password {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-footer {
+  text-align: center;
+}
+
+.auth-footer p {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* Responsive adjustments for social auth buttons */
+.social-auth {
+  display: flex;
+  gap: 0.5rem; /* Reduce gap on mobile */
+  flex-direction: column; /* Stack buttons on mobile */
+}
+
+@media (min-width: 480px) {
+  .social-auth {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.social-auth-btn {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-auth-btn.google {
+  background-color: #4285f4;
+  color: white;
+}
+
+.social-auth-btn.microsoft {
+  background-color: #00a4ef;
+  color: white;
+}
+
+.social-auth-btn:hover {
+  opacity: 0.9;
+}
+
+/* Add styles for the back button */
+.back-to-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.back-to-home:hover {
+  color: var(--primary-color);
+  transform: translateX(-5px);
+}
+
+/* Make login and signup buttons look like links */
+.login-btn,
+.signup-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Ensure the auth container takes full height */
+.auth-container {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+/* Add responsive adjustments */
+@media (max-width: 768px) {
+  .auth-box {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+}
+
+/* Add styles for contact info */
+.contact-info {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.contact-info i {
+  color: var(--primary-color);
+}
+
+/* Theme toggle position fix */
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 100; /* Ensure it's above other elements */
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--text-dark);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.dark-mode .theme-toggle {
+  color: var(--text-light);
+}
+
+.theme-toggle:hover {
+  background-color: var(--background-muted);
+}
+
+/* Speed up animations */
+.animated {
+  animation-duration: 0.2s !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
